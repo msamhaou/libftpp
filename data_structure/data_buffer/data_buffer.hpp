@@ -16,13 +16,13 @@ private:
 public:
     DataBuffer() = default;
     ~DataBuffer() = default;
-	DataBuffer(const DataBuffer&) = delete;
+	DataBuffer(const DataBuffer&) = default;
 	DataBuffer(DataBuffer&&) = delete;
-
     template<typename TType>
     DataBuffer& operator<<(const TType & _o);
     template<typename TType>
     DataBuffer& operator>>(TType & _o);
+
 
 	class NoDataIsAvailable : public std::runtime_error{
     public:
